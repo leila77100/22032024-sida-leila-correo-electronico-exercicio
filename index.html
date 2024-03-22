@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio verificacion de correo electronico</title>
+    <script>
+        function validateemail()  
+{  
+var formularioCorreo =document.myform.email.value;  
+var atposition=formularioCorreo.indexOf("@");  
+var dotposition=formularioCorreo.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=formularioCorreo.length){  
+    //le /n te permite de saltar una linea
+  alert("Por favor entrar un email correcto\n atpostion:"+atposition+"\n dotposition:"+dotposition);  
+  return false;  
+  }  
+}  
+    </script>
+</head>
+<body>
+<!--action te permite de enviar los datos a un otro lado (nesesita un servidor)-->
+<!--el "form" es una herramienta para recoger datos-->
+<!--el "method" : existe GET o POST por datos sensible usar POST porque el GET envio los datos en la barra url-->
+    <form  name="myform"  method="post" action="#" onsubmit="return validateemail();">  
+        <!--el "type" email integra regla de forma de correo pero incompleto -->
+        Email: <input type="email" name="email"><br/>  
+          
+        <input type="submit" value="register">  
+    
+</body>
+</html>
